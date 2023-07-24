@@ -20,29 +20,24 @@
 </head>
 <br>
 <body>
-    <div class="card-body">
-        <table class="table table-dark table-striped">
-            <tr>
-                <th>Codigo Curso</th>
-                <th>Nombre Curso</th>
-                <th>Semestre</th>
-                <th>Periodo</th>
-                <th>Modalidad</th>
-                <th>Grupo</th>
-            </tr>
+    <div class="container">
+        <div class="row">
             @foreach ($cursos as $curso)
-            <tr>
-                <td>{{ $estudiante->codigo_curso }}</td>
-                <td>{{ $estudiante->nombre_curso}}</td>
-                <td>{{ $estudiante->semestre }}</td>
-                <td>{{ $estudiante->periodo }}</td>
-                <td>{{ $estudiante->modalidad }}</td>
-                <td>{{ $estudiante->Grupo }}</td>
-            </tr>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $curso->nombre_curso }}</h5>
+                        <p class="card-text">Código Curso: {{ $curso->codigo_curso }}</p>
+                        <p class="card-text">Semestre: {{ $curso->semestre }}</p>
+                        <p class="card-text">Periodo: {{ $curso->periodo }}</p>
+                        <p class="card-text">Modalidad: {{ $curso->modalidad }}</p>
+                        <p class="card-text">Grupo: {{ $curso->grupo }}</p>
+                    </div>
+                </div>
+            </div>
             @endforeach
-        </table>
+        </div>
     </div>
-   
     
 </body>
 </html>

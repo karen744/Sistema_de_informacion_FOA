@@ -60,31 +60,35 @@
                                 <input type="text" id="nombre_curso" name="nombre_curso" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label for="fecha">Año:</label>
+                                <input type="text" name="fecha" id="fecha" class="form-control" placeholder="YYYY">
+                            </div>
+                            <div class="form-group">
                                 <label class="form-label" for="semestre">Semestre</label> <br>
                                 <select class="input-select" id="semestre" name="semestre" class="select2 form-select" data-allow-clear="true"> <br>
                                   <option value="">Seleccione semestre</option>
-                                  <option value="primero">1</option>
-                                  <option value="segundo">2</option>
-                                  <option value="tercero">3</option>
-                                  <option value="cuarto">4</option>
-                                  <option value="quinto">5</option>
-                                  <option value="sexto">6</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
                                 </select>
                               </div>
                               <div class="form-group">
                                 <label class="form-label" for="periodo">Periodo</label> <br>
                                 <select class="input-select" id="periodo" name="periodo" class="select2 form-select" data-allow-clear="true">
                                   <option value="">Seleccione Periodo</option>
-                                  <option value="periodo_A">A</option>
-                                  <option value="periodo_B">B</option>
+                                  <option value="A">A</option>
+                                  <option value="B">B</option>
                                 </select>
                               </div>
                             <div class="form-group">
-                                <label class="form-label" for="modalidad">Modalidad</label>
+                                <label class="form-label" for="modalidad">Modalidad</label><br>
                                 <select class="input-select" id="modalidad" name="modalidad" class="select2 form-select" data-allow-clear="true">
                                     <option value="">Seleccione Modaliad</option>
-                                    <option value="teorica">Teorica</option>
-                                    <option value="practica">Practica</option>
+                                    <option value="Teorica">Teorica</option>
+                                    <option value="Practica">Practica</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
@@ -121,4 +125,3 @@
 </html>
 
 </x-app-layout>
-

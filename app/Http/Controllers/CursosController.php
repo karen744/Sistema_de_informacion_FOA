@@ -24,6 +24,7 @@ class CursosController extends Controller
             // Agrega aquí las reglas de validación para cada campo del formulario
             'codigo_curso' => 'required',
             'nombre_curso' => 'required',
+            'fecha' => 'required',
             'semestre' => 'required',
             'periodo' => 'required',
             'modalidad' => 'required',
@@ -35,6 +36,7 @@ class CursosController extends Controller
         Curso::create([
             'codigo_curso' => $request->codigo_curso,
             'nombre_curso' => $request->nombre_curso,
+            'fecha' => $request->año,
             'semestre' => $request->semestre,
             'periodo' => $request->periodo,
             'modalidad' => $request->modalidad,
