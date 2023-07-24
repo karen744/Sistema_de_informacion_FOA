@@ -5,6 +5,8 @@ use App\Http\Controllers\FormularioController;
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\InformesController;
 use App\Http\Controllers\DocentesController;
+use App\Http\Controllers\EstudiantesController;
+#use App\Http\Controllers\ExcelController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,9 +41,24 @@ Route::post('/formularios/formulario1', [FormularioController::class, 'store'])-
 #RUTA CURSOS-----------------------------------------------------------------------------------------
 Route::get('/cursos', [CursosController::class, 'index'])->name('cursos');
 Route::get('/cursos/create', [CursosController::class, 'create'])->name('cursos.create');
+Route::post('/cursos/store', [CursosController::class, 'store'])->name('cursos.store');
 
 #RUTA INFORMES------------------------------------------------------------------------------------
 Route::get('/informes', [InformesController::class, 'index'])->name('informes');
 
 #RUTAS DOCENTES------------------------------------------------------------------------------------
 Route::get('/docentes', [DocentesController::class, 'index'])->name('docentes');
+Route::get('/docentes/create', [DocentesController::class, 'create'])->name('create.docentes');
+Route::post('/docentes/store', [DocentesController::class, 'store'])->name('store.docentes');
+Route::get('/docentes/show/{id}', [DocentesController::class, 'show'])->name('show.docentes');
+
+#RUTA ESTUDIANTES-------------------------------------------------------------------------------------------
+Route::get('/estudiantes', [EstudiantesController::class, 'index'])->name('estudiantes');
+Route::get('/estudiantes/create', [EstudiantesController::class, 'create'])->name('registro.estudiantes');
+Route::post('/estudiantes/store', [EstudiantesController::class, 'store'])->name('store.estudiantes');
+
+#EXCEL PRUEBA------------------------------------------------------------------------------------------
+
+
+
+

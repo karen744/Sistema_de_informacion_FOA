@@ -21,9 +21,6 @@
                         <x-nav-link href="{{ route('formulariosfoa') }}" :active="request()->routeIs('formulariosfoa')">
                             {{ __('Formularios') }}
                         </x-nav-link>
-                        <x-nav-link href="{{ route('cursos') }}" :active="request()->routeIs('cursos')">
-                            {{ __('Cursos') }}
-                        </x-nav-link>
                         <x-nav-link href="{{ route('informes') }}" :active="request()->routeIs('informes')">
                             {{ __('Informes') }}
                         </x-nav-link>

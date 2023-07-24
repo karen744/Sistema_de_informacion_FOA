@@ -32,9 +32,45 @@
               <p class="card-text">Programa de Tecnología en Promoción de la Salud</p>
               <p class="card-text">Si es nuevo en el sistema por favor registre sus datos</p>
               <p class="card-text"><small class="text-muted">Vincular docentes a cursos</small></p>
+              <a href="{{ route('create.docentes') }}" class="btn btn-primary">Registro Docentes</a>
               <a href="{{ route('docentes') }}" class="btn btn-primary">Ver Docentes</a>
             </div>
           </div>
         </div>
       </div>
+
+      <style>
+        .card2 {
+            position: relative;
+            top: -335px;
+            left: 600px;
+
+        }
+       
+
+    </style>
+    <div class="card2">
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="imagenbie5.jpeg" class="imagenbie" alt="imagenbie.jpeg">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Cursos - Estudiantes</h5>
+          <p class="card-text">Programa de Tecnología en Promoción de la Salud</p>
+          <p class="card-text"><small class="text-muted">Vincular estudiantes a cursos</small></p>
+          <p class="card-text"> subir estudiantes </p>
+          <a href="{{ route('registro.estudiantes') }}" class="btn btn-primary">Registro Estudiantes</a>
+          <a href="{{ route('cursos.create') }}" class="btn btn-primary">Registro cursos</a><br><br>
+          <a href="{{ route('estudiantes') }}" class="btn btn-primary">Estudiantes</a>
+          <a href="{{ route('cursos') }}" class="btn btn-primary">Cursos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </x-app-layout>
