@@ -42,6 +42,8 @@ Route::post('/formularios/formulario1', [FormularioController::class, 'store'])-
 Route::get('/cursos', [CursosController::class, 'index'])->name('cursos');
 Route::get('/cursos/create', [CursosController::class, 'create'])->name('cursos.create');
 Route::post('/cursos/store', [CursosController::class, 'store'])->name('cursos.store');
+Route::get('/cursos/show/{id}', [CursosController::class, 'show'])->name('cursos.show');
+
 
 #RUTA INFORMES------------------------------------------------------------------------------------
 Route::get('/informes', [InformesController::class, 'index'])->name('informes');

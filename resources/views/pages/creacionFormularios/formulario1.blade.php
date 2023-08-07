@@ -108,7 +108,7 @@
             <div class="card-header sticky-element bg-label-secondary d-flex justify-content-sm-between align-items-sm-center flex-column flex-sm-row">
                 <h5 class="card-title mb-sm-0 me-2">FORMULARIO FOA 15</h5>
                 <div class="action-btns" style="text-align: right">
-                    <a href="{{ route('formulariosfoa')}}" class="btn btn-danger">
+                    <a href="{{ route('cursos')}}" class="btn btn-danger">
                         <span class="align-middle" type="submit" style="background-color: #d52d32; color: #ffffff; border: none; border-radius: 4px; padding: 4px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">Cancelar</span>
                     </a>
                     <button type="submit" style="background-color: #007bff; color: #ffffff; border: none; border-radius: 4px; padding: 10px 20px; font-size: 16px; font-weight: bold; cursor: pointer;">Guardar</button>

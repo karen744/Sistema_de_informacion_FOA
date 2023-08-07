@@ -32,13 +32,16 @@
                         <p class="card-text">Periodo: {{ $curso->periodo }}</p>
                         <p class="card-text">Modalidad: {{ $curso->modalidad }}</p>
                         <p class="card-text">Grupo: {{ $curso->grupo }}</p>
+                        <div class="d-flex align-items-center justify-content-center mt-5">
+                        <a href="{{ route('cursos.show', $curso->codigo_curso) }}" class="btn btn-primary d-flex align-items-center me-3">Ver detalles</a>
+                        
+                        </div>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
-    
 </body>
 </html>
 
