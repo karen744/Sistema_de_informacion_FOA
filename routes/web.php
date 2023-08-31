@@ -32,11 +32,17 @@ Route::middleware([
     })->name('dashboard');
 });
 #----------------------------------------------------------
-#RUTA FORMULARIOS----------
-
+#RUTA FORMULARIOS 01----------
 Route::get('/formularios', [FormularioController::class, 'index'])->name('formulariosfoa');
 Route::get('/formularios/formulario1', [FormularioController::class, 'create'])->name('formulario1.create');
 Route::post('/formularios/formulario1', [FormularioController::class, 'store'])->name('formulario1.store');
+
+#RUTA FORMULARIOS 07----------
+Route::get('/formularios', [\App\Http\Controllers\Formulario07Controller::class, 'index'])->name('formulariosfoa');
+Route::get('/formularios/formulario07', [\App\Http\Controllers\Formulario07Controller::class, 'create'])->name('formulario07.create');
+// Route::get('/formularios', [Formulario07Controller::class, 'index'])->name('formulariosfoa');
+// Route::get('/formularios/formulario07', [Formulario07Controller::class, 'create'])->name('formulario07.create');
+// Route::post('/formularios/formulario07', [Formulario07Controller::class, 'store'])->name('formulario07.store');
 
 #RUTA CURSOS-----------------------------------------------------------------------------------------
 Route::get('/cursos', [CursosController::class, 'index'])->name('cursos');

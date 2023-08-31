@@ -39,9 +39,10 @@
           </ul>
           <a href="{{ route('registro.estudiantes') }}" class="btn btn-primary">Registro Estudiantes</a>
         <a href="{{ route('estudiantes') }}" class="btn btn-primary">Estudiantes</a>
-        <a href="{{ route('formulario1.create') }}" class="btn btn-primary  " style="margin-left: 10px; margin-top: -550px">Formulario FOA 15</a> 
-        <button type="button" class="btn btn-secondary" style="margin-left: 10px; margin-top: -550px">Formulario FOA 7</button>
-        <button type="button" class="btn btn-secondary" style="margin-left: 380px; margin-top: -530px">Formulario FOA 13</button>
+        <a href="{{ route('formulario1.create') }}" class="btn btn-secondary " style="margin-left: 400px; margin-top: -550px">Formulario FOA 15</a>
+        <a href="{{ route('formulario07.create') }}" class="btn btn-secondary " style="margin-left: 400px; margin-top: -450px">Formulario FOA 07</a>  
+
+        <button type="button" class="btn btn-secondary" style="margin-left: 400px; margin-top: -390px">Formulario FOA 13</button>
         </div>
       </div>
       <!--/ Event Details -->
