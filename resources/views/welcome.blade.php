@@ -45,7 +45,7 @@
             border-radius: 5px;
             transition: background-color 0.3s;
             position: relative;
-            top: -430px; /* Ajusta este valor para cambiar la posición vertical */
+            top: -410px; /* Ajusta este valor para cambiar la posición vertical */
             left: 500px;
             
         }
@@ -58,7 +58,7 @@
             border-radius: 5px;
             transition: background-color 0.3s;
             position: relative;
-            top: -430px; /* Ajusta este valor para cambiar la posición vertical */
+            top: -410px; /* Ajusta este valor para cambiar la posición vertical */
             left: 500px;
         }
         .btni:hover {
