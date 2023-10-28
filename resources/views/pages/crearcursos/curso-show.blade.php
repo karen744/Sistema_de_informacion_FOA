@@ -37,7 +37,7 @@
             <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Grupo: </span> <span>{{$curso->grupo}}</span></li>
 
           </ul>
-          <a href="{{ route('registro.estudiantes') }}" class="btn btn-primary">Registro Estudiantes</a>
+        
         <a href="{{ route('estudiantes') }}" class="btn btn-primary">Estudiantes</a>
         <a href="{{ route('formulario1.create') }}" class="btn btn-secondary " style="margin-left: 400px; margin-top: -550px">Formulario FOA 15</a>
         <a href="{{ route('formulario07.create') }}" class="btn btn-secondary " style="margin-left: 400px; margin-top: -450px">Formulario FOA 07</a>  

@@ -21,7 +21,10 @@
         </h2>
     </x-slot>
     <br>
-
+    <div>
+    <a href="{{ route('create.docentes') }}" class="btn btn-primary" style="margin-left: 172px">Registro Docentes</a>
+    </div>
+    <br>
     <div class="container">
      
         <div class="card">
@@ -40,9 +43,6 @@
                             <th>Número de Celular</th>
                             <th>Email</th>
                           </tr>
-                        
-                      </table>
-                    <table class="table table-bordered table-striped">
                         <thead>
                             @foreach ($docentes as $docente)
                             <tr>
@@ -62,6 +62,7 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Resto del contenido de la página -->
 </x-app-layout>

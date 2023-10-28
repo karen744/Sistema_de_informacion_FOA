@@ -20,8 +20,13 @@
 </head>
 <br>
 <body>
+    <div>
+        <a href="{{ route('cursos.create') }}" class="btn btn-primary" style="margin-left: 172px" >Registro cursos</a>
+    </div>
+    <br>
     <div class="container">
         <div class="row">
+            
             @foreach ($cursos as $curso)
             <div class="col-md-4 mb-4">
                 <div class="card">
@@ -38,10 +43,14 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             @endforeach
+            
         </div>
+       
     </div>
+    
 </body>
 </html>
 

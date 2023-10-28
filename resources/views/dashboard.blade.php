@@ -32,7 +32,6 @@
               <p class="card-text">Programa de Tecnología en Promoción de la Salud</p>
               <p class="card-text">Si es nuevo en el sistema por favor registre sus datos</p>
               <p class="card-text"><small class="text-muted">Vincular docentes a cursos</small></p>
-              <a href="{{ route('create.docentes') }}" class="btn btn-primary">Registro Docentes</a>
               <a href="{{ route('docentes') }}" class="btn btn-primary">Ver Docentes</a>
             </div>
           </div>
@@ -63,7 +62,7 @@
           <p class="card-text"><small class="text-muted">Vincular estudiantes a cursos</small></p>
           <p class="card-text"> subir estudiantes </p>
           
-          <a href="{{ route('cursos.create') }}" class="btn btn-primary">Registro cursos</a>
+          
          
           <a href="{{ route('cursos') }}" class="btn btn-primary">Cursos</a>
         </div>

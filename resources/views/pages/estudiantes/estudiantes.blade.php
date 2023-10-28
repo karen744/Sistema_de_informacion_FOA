@@ -16,6 +16,9 @@
 </head>
 <br>
 <body>
+    <div>
+        <a href="{{ route('registro.estudiantes') }}" class="btn btn-primary" style="margin-left: 20px;">Registro Estudiantes</a>
+    </div>
     <div class="card-body">
         <table class="table table-dark table-striped">
             <tr>
@@ -32,6 +35,7 @@
             @endforeach
         </table>
     </div>
+    
    
     
 </body>
