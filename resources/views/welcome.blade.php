@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <title>Sistema FOA</title>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema FOA</title>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Estilos personalizados */
         body {
@@ -45,8 +47,8 @@
             border-radius: 5px;
             transition: background-color 0.3s;
             position: relative;
-            top: -410px; /* Ajusta este valor para cambiar la posición vertical */
-            left: 500px;
+            top: 20px; /* Ajusta este valor para cambiar la posición vertical */
+            left: -205px;
             
         }
         .btnr {
@@ -58,8 +60,8 @@
             border-radius: 5px;
             transition: background-color 0.3s;
             position: relative;
-            top: -410px; /* Ajusta este valor para cambiar la posición vertical */
-            left: 500px;
+            top: 20px; /* Ajusta este valor para cambiar la posición vertical */
+            left: -205px;
         }
         .btni:hover {
             background-color: #2c455e;
@@ -96,7 +98,7 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased" style="background-image: url('{{ asset('salud-udenar.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.5)">>
     <div class="container">
         <div class="content">
             <style>
@@ -108,15 +110,17 @@
                   height: auto;
                 }
               </style>
-            <img class="imagen2" src="{{ asset('logobie.png') }}" alt="logobie.png" width="200px">
-
-            <h2>Bienvenido al Programa</h2>
-            <h2>Promoción de la salud</h2>
-            <p>Gracias por utilizar nuestro sistema. Regístrate o inicia sesión para continuar.</p>
             
-           
+
+            <div class="div1" style="margin-right: 600px;">
+            <h2 class="titulo" style="font-size: 40px; color: black; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Bienvenido al Programa</h2>
+            <h2 class="titulo2" style="font-size: 30px; color: black;   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" >Promoción de la salud</h2>
+            <p class="parrafo" style="color: rgb(0, 0, 0); font-size: 15px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Gracias por utilizar nuestro sistema. Regístrate o inicia sesión para continuar.</p>
+           </div>
+            
+           <div >
             @if (Route::has('login'))
-                <div class="actions">
+                <div class="actions" style="margin-right: 200px">
                     
                     @auth
                         <a href="{{ url('/dashboard') }}" class="btn" >Dashboard</a>
@@ -129,11 +133,25 @@
                     @endif
                 </div>
             @endif
-            
         </div>
+        <img class="imagen2" src="{{ asset('logobie.png') }}" alt="logobie.png"  style="margin-left: 400px; margin-top: -290px; opacity: 0.5; width: 410px">
+        </div>
+                <div class="iconos" style="margin-top: -40px; margin-right: 600px; font-size: 30px">
+            <a href="https://www.facebook.com/PromocionSaludUdeNar" target="_blank" class="icono-facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/promociondelasalud_udenar/" target="_blank" class="icono-instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        
     </div>
        
        
+    </div>
+    <div>
+
     </div>
 </body>
 </html>
