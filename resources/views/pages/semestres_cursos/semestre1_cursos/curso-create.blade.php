@@ -47,7 +47,7 @@
                 <h5 class="card-title">Registro Cursos</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('cursos.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('semestre1_cursos.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -85,17 +85,17 @@
                                 </div>
                         </div>
                     </div>
-                    @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
+                                @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <div class="text-center">
                        <div class="action-btns">
-                        <a href="{{ route('dashboard')}}" class="btn btn-danger">
+                        <a href="{{ route('semestre1')}}" class="btn btn-danger">
                           <span class="align-middle">Cancelar</span>
                         </a>
                         <button type="submit" class="btn btn-primary">

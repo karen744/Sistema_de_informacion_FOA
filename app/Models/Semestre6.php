@@ -5,22 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Curso extends Model
+class Semestre6 extends Model
 {
-    use HasFactory;
-    protected $primaryKey = 'codigo_curso';
+    protected $primaryKey = 'codigo_curso_semestre6';
 
     protected $fillable = [
-        'codigo_curso',
+        'codigo_curso_semestre6',
         'nombre_curso',
         'fecha',
-        'semestre',
         'periodo',
         'modalidad',
         'grupo'
         
     ];
-
-  
-
 }

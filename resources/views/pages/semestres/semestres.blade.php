@@ -23,48 +23,56 @@
           
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="1.png" class="1.png" alt="1.png">
+                        <a href="{{ route('semestre1') }}">
+                            <img src="1.png" class="1.png" alt="1.png">
+                        </a>
                         <div class="card-body">
-                            
-                            <h5 class="card-title">Semestre 1</h5>
                         </div>
                     </div>
                     <br>
                     <div class="card">
-                        <img src="2.png" class="2.png" alt="2.png">
+                        <a href="{{ route('semestre2') }}">
+                            <img src="2.png" class="2.png" alt="2.png">
+                        </a>
                         <div class="card-body">
-                            <h5 class="card-title">Semestre 2</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card">
+                    <a href="{{ route('semestre3') }}">
                         <img src="3.png" class="3.png" alt="3.png">
+                    </a>
                         <div class="card-body">
-                            <h5 class="card-title">Semestre 3</h5>
+                            
                         </div>
                     </div>
                     <br>
                     <div class="card">
+                    <a href="{{ route('semestre4') }}">
                         <img src="4.png" class="4.png" alt="4.png">
+                    </a>
                         <div class="card-body">
-                            <h5 class="card-title">Semestre 4</h5>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="5.png" class="5.png" alt="6.png">
+                        <a href="{{ route('semestre5') }}">
+                            <img src="5.png" class="5.png" alt="6.png">
+                        </a>
                         <div class="card-body">
-                            <h5 class="card-title">Semestre 5</h5>
+                         
                         </div>
                     </div>
                     <br>
                     <div class="card">
-                        <img src="6.png" class="6.png" alt="6.png">
+                        <a href="{{ route('semestre6') }}">
+                            <img src="6.png" class="6.png" alt="6.png">
+                        </a>
                         <div class="card-body">
-                            <h5 class="card-title">Semestre 6</h5>
+                          
                         </div>
                     </div>
                 </div>
