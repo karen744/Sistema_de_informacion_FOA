@@ -27,12 +27,12 @@
                 <th>Contacto</th>
             </tr>
             @foreach ($estudiantes as $estudiante)
-            <tr>
-                <td>{{ $estudiante->codigo_estudiante }}</td>
-                <td>{{ $estudiante->nombre_estudiante }}</td>
-                <td>{{ $estudiante->contacto }}</td>
-            </tr>
-            @endforeach
+    <tr>
+        <td>{{ $estudiante->codigo_estudiante }}</td>
+        <td>{{ $estudiante->nombre_estudiante }}</td>
+        <td>{{ $estudiante->contacto }}</td>
+    </tr>
+@endforeach
         </table>
     </div>
     

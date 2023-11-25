@@ -4,36 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Estudiante;
+use Illuminate\Support\Facades\Log;
 
 class ExcelController extends Controller
 {
-    public function subirExcel(Request $request)
+    public function showForm()
     {
-        // Validar que se haya enviado un archivo y sea de tipo Excel
-        $request->validate([
-            'archivo_excel' => 'required|mimes:xlsx,xls',
-        ]);
-
-        // Obtener el archivo subido
-        $archivo = $request->file('archivo_excel');
-
-        // Procesar el archivo Excel
-        $objPHPExcel = IOFactory::load($archivo);
-        $hojas = $objPHPExcel->getAllSheets();
-
-        // Puedes hacer lo que necesites con las hojas y sus datos aquí
-        // Por ejemplo, puedes iterar sobre las hojas y mostrar sus nombres y datos
-
-        foreach ($hojas as $hoja) {
-            $nombreHoja = $hoja->getTitle();
-            $datos = $hoja->toArray();
-
-            // Aquí puedes trabajar con $nombreHoja y $datos como necesites
-        }
-
-        // Redireccionar o devolver una respuesta
-        return redirect()->back()->with('success', 'Archivo Excel subido y procesado exitosamente.');
+        return view('upload');
     }
 
-    
+    public function import(Request $request)
+    {
+        $request->validate([
+            'excel_file' => 'required|mimes:xls,xlsx'
+        ]);
+
+        $file = $request->file('excel_file');
+
+        ExcelController::import(new EstudiantesController, $file);
+
+        return redirect()->route('estudiantes')->with('success', 'Datos de Excel subidos y guardados exitosamente.');
+    }
+
+    public function showData()
+    {
+        $data = Estudiante::all();
+
+        return redirect()->route('estudiantes')->with('success', 'Datos de Excel subidos y guardados exitosamente.');
+    }
 }

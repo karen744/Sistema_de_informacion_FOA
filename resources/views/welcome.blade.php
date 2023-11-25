@@ -98,7 +98,7 @@
         }
     </style>
 </head>
-<body class="antialiased" style="background-image: url('{{ asset('salud-udenar.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.5)">>
+<body class="antialiased" style="background-image: url('{{ asset('salud-udenar.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.5); ">>
     <div class="container">
         <div class="content">
             <style>

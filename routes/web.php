@@ -6,7 +6,8 @@ use App\Http\Controllers\CursosController;
 use App\Http\Controllers\InformesController;
 use App\Http\Controllers\DocentesController;
 use App\Http\Controllers\EstudiantesController;
-#use App\Http\Controllers\ExcelController;
+use App\Http\Controllers\ExcelController;
+use App\Http\Controllers\SemestreController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +51,14 @@ Route::get('/cursos/create', [CursosController::class, 'create'])->name('cursos.
 Route::post('/cursos/store', [CursosController::class, 'store'])->name('cursos.store');
 Route::get('/cursos/show/{id}', [CursosController::class, 'show'])->name('cursos.show');
 
+#RUTA SEMESTRES------------------------------------------------------------------------------------
+Route::get('/semestres', [SemestreController::class, 'index'])->name('semestres');
+Route::get('/semestres/semestre1', [SemestreController::class, 'index'])->name('semestre1');
+Route::get('/semestres/semestre2', [SemestreController::class, 'index'])->name('semestre2');
+Route::get('/semestres/semestre3', [SemestreController::class, 'index'])->name('semestre3');
+Route::get('/semestres/semestre4', [SemestreController::class, 'index'])->name('semestre4');
+Route::get('/semestres/semestre5', [SemestreController::class, 'index'])->name('semestre5');
+Route::get('/semestres/semestre5', [SemestreController::class, 'index'])->name('semestre6');
 
 #RUTA INFORMES------------------------------------------------------------------------------------
 Route::get('/informes', [InformesController::class, 'index'])->name('informes');
@@ -66,7 +75,10 @@ Route::get('/estudiantes/create', [EstudiantesController::class, 'create'])->nam
 Route::post('/estudiantes/store', [EstudiantesController::class, 'store'])->name('store.estudiantes');
 
 #EXCEL PRUEBA------------------------------------------------------------------------------------------
-
+#Route::post('/subir-excel', [ExcelController::class, 'subirExcel'])->name('subir.excel');
+Route::get('/upload', [ExcelController::class, 'showForm'])->name('upload.form');
+Route::post('/import', [ExcelController::class, 'import'])->name('upload.import');
+Route::get('/show-data', [ExcelController::class, 'showData'])->name('data.show');
 
 
 

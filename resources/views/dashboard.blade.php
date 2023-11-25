@@ -61,7 +61,7 @@
           <p class="card-text">Programa de Tecnología en Promoción de la Salud</p>
           <p class="card-text"><small class="text-muted">Vincular estudiantes a cursos</small></p>
           <p class="card-text"> subir estudiantes </p>
-          <a href="{{ route('cursos') }}" class="btn btn-primary">Cursos</a>
+          <a href="{{ route('semestres') }}" class="btn btn-primary">Cursos</a>
         </div>
       </div>
     </div>

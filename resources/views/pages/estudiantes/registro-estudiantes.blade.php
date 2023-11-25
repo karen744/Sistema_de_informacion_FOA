@@ -49,43 +49,10 @@
                 <h5 class="card-title">Registro Estudiantes</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('store.estudiantes') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('upload.import') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label" for="codigo_estudiante">Código de Estudiante</label>
-                                <input type="text" id="codigo_estudiante" name="codigo_estudiante" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="nombre_estudiante">Nombre Completo</label>
-                                <input type="text" id="nombre_estudiante" name="nombre_estudiante" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="contacto">Contacto</label>
-                                <input type="text" id="contacto" name="contacto" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-                    <div class="text-center">
-                       <div class="action-btns">
-                        <a href="{{ route('estudiantes')}}" class="btn btn-danger">
-                          <span class="align-middle">Cancelar</span>
-                        </a>
-                        <button type="submit" class="btn btn-primary">
-                          Guardar
-                        </button>
-                      </div>
-                    </div>
-                    
+                    <input type="file" name="excel_file">
+                    <button class="btn btn-primary" type="submit">Cargar archivo</button>
                 </form>
             </div>
         </div>
