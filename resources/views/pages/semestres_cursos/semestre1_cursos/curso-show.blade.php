@@ -14,7 +14,7 @@
         <title>Cursos</title>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Cursos') }}
+                {{ __(' Semestre 1 - Curso') }}
             </h2>
         </x-slot>
         <br>
@@ -29,13 +29,11 @@
           
           <small class="text-muted text-uppercase">Informacion Curso</small>
           <ul class="list-unstyled mb-4 mt-3">
-            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Curso: </span> <span>{{$curso->nombre_curso}}</span></li>
-            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Año: </span> <span>{{$curso->fecha}}</span></li>
-            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Periodo: </span> <span>{{$curso->periodo}}</span></li>
-            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Semestre: </span> <span>{{$curso->semestre}}</span></li>
-            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Modalidad: </span> <span>{{$curso->modalidad}}</span></li>
-            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Grupo: </span> <span>{{$curso->grupo}}</span></li>
-
+            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Curso: </span> <span>{{$curso_semestre1->nombre_curso}}</span></li>
+            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Creditos: </span> <span>{{$curso_semestre1->creditos}}</span></li>
+            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Año: </span> <span>{{$curso_semestre1->fecha}}</span></li>
+            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Periodo: </span> <span>{{$curso_semestre1->periodo}}</span></li>
+            <li class="d-flex align-items-center mb-3"><i class="bx bx-calendar-alt"></i><span class="fw-semibold mx-2">Modalidad: </span> <span>{{$curso_semestre1->modalidad}}</span></li>
           </ul>
         
         <a href="{{ route('estudiantes') }}" class="btn btn-primary">Estudiantes</a>

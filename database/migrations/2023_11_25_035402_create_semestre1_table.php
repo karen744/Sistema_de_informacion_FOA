@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('semestre1', function (Blueprint $table) {
             $table->id('codigo_curso_semestre1');
             $table->string('nombre_curso');
+            $table->string('creditos');
             $table->string('fecha');
             $table->string('periodo');
             $table->string('modalidad');
-            $table->string('grupo');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('semestre1');
+        Schema::dropIfExists('semestre1s');
     }
 };

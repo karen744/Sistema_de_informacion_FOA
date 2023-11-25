@@ -18,31 +18,61 @@
 <br>
 <body>
     <div>
-        <a href="{{ route('semestre1_cursos.create') }}" class="btn btn-primary" style="margin-right: 400px" >Registro cursos</a>
+        <a href="{{ route('semestres.semestre6.create') }}" class="btn btn-primary" style="margin-right: 400px" >Registro cursos</a>
     </div>
     <br>
  
     <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush">
           <li class="list-group-item" style="background-color: rgb(62, 236, 71)">Basicas de Fundamentacion</li>
           <li class="list-group-item" style="background-color: rgb(218, 236, 62)">Basicas Disciplinares</li>
           <li class="list-group-item" style="background-color: rgb(252, 111, 111)">Especificas diciplinares</li>
-        </ul>
-        
-      </div>
-      <br>
+      </ul>
+  </div>
 
-      <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
+  <br>
+
+  <div class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
           <li class="list-group-item" style="background-color: rgb(252, 111, 111)">Teorias Especificas (T:6)</li>
-        </ul>
-      </div>
-      <br>
-      <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
+      </ul>
+  </div>
+
+  <br>
+
+  <div class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
           <li class="list-group-item" style="background-color: rgb(252, 111, 111)">Practica Integrada (P:15)</li>
-        </ul>
-      </div>
+      </ul>
+  </div>
+
+  <br>
+
+  <div class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item" style="background-color: rgb(111, 188, 252)">Electivas I II III (T:2)</li>
+      </ul>
+  </div>
+
+  <br>
+
+  <div class="row" style="margin-left: 500px; margin-top: -400px">
+      @forelse ($curso_semestre6 as $curso)
+          <div class="col-md-4 mb-4">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ $curso->nombre_curso }}</h5>
+                      <p class="card-text">Código Curso: {{ $curso->codigo_curso_semestre6 }}</p>
+                      <div class="d-flex align-items-center justify-content-center mt-5">
+                          <a href="{{ route('semestres.semestre6.show', $curso->codigo_curso_semestre6) }}" class="btn btn-primary d-flex align-items-center me-3">Ver detalles</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      @empty
+          <p>No hay cursos disponibles.</p>
+      @endforelse
+  </div>
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-yiDgyDEi1ce/l7btxcM8sPRRlohNA5nGm4NTP7Oe+njfukhdj4DTt+IfaPMj4PaX" crossorigin="anonymous"></script>
     

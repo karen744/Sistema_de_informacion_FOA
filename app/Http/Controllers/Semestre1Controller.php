@@ -9,8 +9,9 @@ class Semestre1Controller extends Controller
 {
     public function index()
     {
-        $cursos = Semestre1::all();
-        return view('pages.semestre.semestre1', compact('semestre1'));
+        $curso_semestre1 = Semestre1::all();
+        
+        return view('pages.semestres_cursos.semestre1_cursos.semestre1', compact('curso_semestre1'));
     }
 
     public function create()
@@ -19,47 +20,47 @@ class Semestre1Controller extends Controller
     }
 
     public function store(Request $request)
-    {
-        // Validar los datos del formulario
-        $validatedData = $request->validate([
-            'codigo_curso_semestre1' => 'required',
-            'nombre_curso' => 'required',
-            'fecha' => 'required',
-            'periodo' => 'required',
-            'modalidad' => 'required',
-            'grupo' => 'required'
+{
+    // Validar los datos del formulario
+    $validatedData = $request->validate([
+        'codigo_curso_semestre1' => 'required',
+        'nombre_curso' => 'required',
+        'creditos' => 'required',
+        'fecha' => 'required',
+        'periodo' => 'required',
+        'modalidad' => 'required',
+    ]);
+
+    try {
+        // Guardar el curso en la base de datos
+        Semestre1::create([
+            'codigo_curso_semestre1' => $request->codigo_curso_semestre1,
+            'nombre_curso' => $request->nombre_curso,
+            'creditos' => $request->creditos,
+            'fecha' => $request->fecha,
+            'periodo' => $request->periodo,
+            'modalidad' => $request->modalidad,
         ]);
 
-        try {
-            // Guardar el curso en la base de datos
-            Semestre1::create([
-                'codigo_curso_semestre1' => $request->codigo_curso_semestre1,
-                'nombre_curso' => $request->nombre_curso,
-                'fecha' => $request->fecha,
-                'periodo' => $request->periodo,
-                'modalidad' => $request->modalidad,
-                'grupo' => $request->grupo
-            ]);
-
-            // Después de registrar el curso exitosamente
-            return redirect()->route('semestre1')->with('success', '¡Curso registrado exitosamente!');
-        } catch (\Exception $e) {
-            // Manejar el error y redirigir con un mensaje de error
-            return redirect()->route('semestre1')->with('error', '¡Error al registrar el curso!');
-        }
+        // Después de registrar el curso exitosamente
+        return redirect()->route('semestres.semestre1.index')->with('success', '¡Curso registrado exitosamente!');
+    } catch (\Exception $e) {
+        // Manejar el error y redirigir con un mensaje de error
+        return redirect()->route('semestres.semestre1.index')->with('error', '¡Error al registrar el curso!');
     }
+}
 
     public function show($id)
-    {
-        $curso = Semestre1::find($id); // Obtener el curso según el ID proporcionado
+{
+    $curso_semestre1 = Semestre1::find($id); // Obtener el curso según el ID proporcionado
 
-        if (!$curso) {
-            return redirect()->route('ruta.de.error')->with('error', 'El curso no existe'); // Redirigir si el curso no se encuentra
-        }
-
-        // En este punto, tienes el objeto $curso que representa el curso con el ID dado
-        // Puedes usar $curso para mostrar detalles en tu vista o realizar otras acciones
-
-        return view('pages.semestres_cursos.semestre1_cursos.curso-show', ['semestre1' => $curso]); // Redirigir a la vista adecuada con el objeto del curso
+    if (!$curso_semestre1) {
+        return redirect()->route('ruta.de.error')->with('error', 'El curso no existe'); // Redirigir si el curso no se encuentra
     }
+
+    // En este punto, tienes el objeto $curso_semestre1 que representa el curso con el ID dado
+    // Puedes usar $curso_semestre1 para mostrar detalles en tu vista o realizar otras acciones
+
+    return view('pages.semestres_cursos.semestre1_cursos.curso-show', ['curso_semestre1' => $curso_semestre1]); // Redirigir a la vista adecuada con el objeto del curso
+}
 }

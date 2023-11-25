@@ -47,23 +47,15 @@
                 <h5 class="card-title">Registro Cursos</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('cursos.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('semestres.semestre2.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-label" for="codigo_curso">Código de Curso</label>
-                                <input type="text" id="codigo_curso" name="codigo_curso" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="nombre_curso">Nombre del Curso</label>
-                                <input type="text" id="nombre_curso" name="nombre_curso" class="form-control">
-                            </div>
-                            <div class="form-group">
                                 <label for="fecha">Año:</label>
                                 <input type="text" name="fecha" id="fecha" class="form-control" placeholder="YYYY">
                             </div>
-                              <div class="form-group">
+                            <div class="form-group">
                                 <label class="form-label" for="periodo">Periodo</label> <br>
                                 <select class="input-select" id="periodo" name="periodo" class="select2 form-select" data-allow-clear="true">
                                   <option value="">Seleccione Periodo</option>
@@ -71,6 +63,14 @@
                                   <option value="B">B</option>
                                 </select>
                               </div>
+                            <div class="form-group">
+                                <label class="form-label" for="codigo_curso_semestre2">Código de Curso</label>
+                                <input type="text" id="codigo_curso_semestre2" name="codigo_curso_semestre2" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="nombre_curso">Nombre del Curso</label>
+                                <input type="text" id="nombre_curso" name="nombre_curso" class="form-control">
+                            </div>
                             <div class="form-group">
                                 <label class="form-label" for="modalidad">Modalidad</label><br>
                                 <select class="input-select" id="modalidad" name="modalidad" class="select2 form-select" data-allow-clear="true">
@@ -80,22 +80,22 @@
                                   </select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="grupo">Grupo</label>
-                                    <input type="text" id="grupo" name="grupo" class="form-control">
+                                    <label class="form-label" for="creditos">Creditos</label>
+                                    <input type="text" id="creditos" name="creditos" class="form-control">
                                 </div>
                         </div>
                     </div>
-                    @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
+                                @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <div class="text-center">
                        <div class="action-btns">
-                        <a href="{{ route('dashboard')}}" class="btn btn-danger">
+                        <a href="{{ route('semestres.semestre2.index')}}" class="btn btn-danger">
                           <span class="align-middle">Cancelar</span>
                         </a>
                         <button type="submit" class="btn btn-primary">
@@ -103,6 +103,7 @@
                         </button>
                       </div>
                     </div>
+                    
                     
                 </form>
             </div>

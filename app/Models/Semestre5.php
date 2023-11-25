@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Semestre5 extends Model
 {
+    protected $table = 'semestre5';
     protected $primaryKey = 'codigo_curso_semestre5';
 
     protected $fillable = [
         'codigo_curso_semestre5',
         'nombre_curso',
+        'creditos',
         'fecha',
         'periodo',
         'modalidad',
-        'grupo'
-        
     ];
 }

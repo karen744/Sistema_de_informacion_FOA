@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('semestre3', function (Blueprint $table) {
             $table->id('codigo_curso_semestre3');
             $table->string('nombre_curso');
+            $table->string('creditos');
             $table->string('fecha');
             $table->string('periodo');
             $table->string('modalidad');
-            $table->string('grupo');
             $table->timestamps();
         });
     }

@@ -60,39 +60,44 @@ Route::get('/cursos/show/{id}', [CursosController::class, 'show'])->name('cursos
 #RUTA SEMESTRES------------------------------------------------------------------------------------
 Route::get('/semestres', [SemestreController::class, 'index'])->name('semestres');
 
-Route::prefix('/semestres')->group(function () {
-    Route::get('/semestre1', [SemestreController::class, 'semestre1'])->name('semestre1');
-    Route::get('/semestre2', [SemestreController::class, 'semestre2'])->name('semestre2');
-    Route::get('/semestre3', [SemestreController::class, 'semestre3'])->name('semestre3');
-    Route::get('/semestre4', [SemestreController::class, 'semestre4'])->name('semestre4');
-    Route::get('/semestre5', [SemestreController::class, 'semestre5'])->name('semestre5');
-    Route::get('/semestre6', [SemestreController::class, 'semestre6'])->name('semestre6');
-});
+
+Route::get('/semestres/semestre1', [Semestre1Controller::class, 'index'])->name('semestres.semestre1.index');
+Route::get('/semestres/semestre2', [Semestre2Controller::class, 'index'])->name('semestres.semestre2.index');
+Route::get('/semestres/semestre3', [Semestre3Controller::class, 'index'])->name('semestres.semestre3.index');
+Route::get('/semestres/semestre4', [Semestre4Controller::class, 'index'])->name('semestres.semestre4.index');
+Route::get('/semestres/semestre5', [Semestre5Controller::class, 'index'])->name('semestres.semestre5.index');
+Route::get('/semestres/semestre6', [Semestre6Controller::class, 'index'])->name('semestres.semestre6.index');
+
 
 #RUTA SEMESTRE1------------------------------------------------------------------------------------
-Route::get('/semestre/semestre1/create', [Semestre1Controller::class, 'create'])->name('semestre1_cursos.create');
-Route::post('/semestre/semestre1/store', [Semestre1Controller::class, 'store'])->name('semestre1_cursos.store');
-Route::get('/semestre/semestre1/{id}', [Semestre1Controller::class, 'show'])->name('semestre1_cursos.show');
+Route::get('/semestres/semestre1/create', [Semestre1Controller::class, 'create'])->name('semestres.semestre1.create');
+Route::post('/semestres/semestre1/store', [Semestre1Controller::class, 'store'])->name('semestres.semestre1.store');
+Route::get('/semestres/semestre1/{id}', [Semestre1Controller::class, 'show'])->name('semestres.semestre1.show');
+
 #RUTA SEMESTRE2------------------------------------------------------------------------------------
-Route::get('/semestre/semestre2/create', [Semestre1Controller::class, 'create'])->name('semestre2_cursos.create');
-Route::post('/semestre/semestre2/store', [Semestre1Controller::class, 'store'])->name('semestre2_cursos.store');
-Route::get('/semestre/semestre2/{id}', [Semestre1Controller::class, 'show'])->name('semestre2_cursos.show');
+Route::get('/semestres/semestre2/create', [Semestre2Controller::class, 'create'])->name('semestres.semestre2.create');
+Route::post('/semestres/semestre2/store', [Semestre2Controller::class, 'store'])->name('semestres.semestre2.store');
+Route::get('/semestres/semestre2/{id}', [Semestre2Controller::class, 'show'])->name('semestres.semestre2.show');
+
 #RUTA SEMESTRE3------------------------------------------------------------------------------------
-Route::get('/semestre/semestre3/create', [Semestre1Controller::class, 'create'])->name('semestre3_cursos.create');
-Route::post('/semestre/semestre3/store', [Semestre1Controller::class, 'store'])->name('semestre3_cursos.store');
-Route::get('/semestre/semestre3/{id}', [Semestre1Controller::class, 'show'])->name('semestre3_cursos.show');
+Route::get('/semestres/semestre3/create', [Semestre3Controller::class, 'create'])->name('semestres.semestre3.create');
+Route::post('/semestres/semestre3/store', [Semestre3Controller::class, 'store'])->name('semestres.semestre3.store');
+Route::get('/semestres/semestre3/{id}', [Semestre3Controller::class, 'show'])->name('semestres.semestre3.show');
+
 #RUTA SEMESTRE4------------------------------------------------------------------------------------
-Route::get('/semestre/semestre4/create', [Semestre1Controller::class, 'create'])->name('semestre4_cursos.create');
-Route::post('/semestre/semestre4/store', [Semestre1Controller::class, 'store'])->name('semestre4_cursos.store');
-Route::get('/semestre/semestre4/{id}', [Semestre1Controller::class, 'show'])->name('semestre4_cursos.show');
+Route::get('/semestres/semestre4/create', [Semestre4Controller::class, 'create'])->name('semestres.semestre4.create');
+Route::post('/semestres/semestre4/store', [Semestre4Controller::class, 'store'])->name('semestres.semestre4.store');
+Route::get('/semestres/semestre4/{id}', [Semestre4Controller::class, 'show'])->name('semestres.semestre4.show');
+
 #RUTA SEMESTRE5------------------------------------------------------------------------------------
-Route::get('/semestre/semestre5/create', [Semestre1Controller::class, 'create'])->name('semestre5_cursos.create');
-Route::post('/semestre/semestre5/store', [Semestre1Controller::class, 'store'])->name('semestre5_cursos.store');
-Route::get('/semestre/semestre5/{id}', [Semestre1Controller::class, 'show'])->name('semestre5_cursos.show');
+Route::get('/semestres/semestre5/create', [Semestre5Controller::class, 'create'])->name('semestres.semestre5.create');
+Route::post('/semestres/semestre5/store', [Semestre5Controller::class, 'store'])->name('semestres.semestre5.store');
+Route::get('/semestres/semestre5/{id}', [Semestre5Controller::class, 'show'])->name('semestres.semestre5.show');
+
 #RUTA SEMESTRE6------------------------------------------------------------------------------------
-Route::get('/semestre/semestre6/create', [Semestre1Controller::class, 'create'])->name('semestre6_cursos.create');
-Route::post('/semestre/semestre6/store', [Semestre1Controller::class, 'store'])->name('semestre6_cursos.store');
-Route::get('/semestre/semestre6/{id}', [Semestre1Controller::class, 'show'])->name('semestre6_cursos.show');
+Route::get('/semestres/semestre6/create', [Semestre6Controller::class, 'create'])->name('semestres.semestre6.create');
+Route::post('/semestres/semestre6/store', [Semestre6Controller::class, 'store'])->name('semestres.semestre6.store');
+Route::get('/semestres/semestre6/{id}', [Semestre6Controller::class, 'show'])->name('semestres.semestre6.show');
 
 
 #RUTA INFORMES------------------------------------------------------------------------------------
