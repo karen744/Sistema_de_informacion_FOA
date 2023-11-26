@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Semestre1;
+use App\Models\Docente;
 
 class Semestre1Controller extends Controller
 {
@@ -58,9 +59,46 @@ class Semestre1Controller extends Controller
         return redirect()->route('ruta.de.error')->with('error', 'El curso no existe'); // Redirigir si el curso no se encuentra
     }
 
-    // En este punto, tienes el objeto $curso_semestre1 que representa el curso con el ID dado
-    // Puedes usar $curso_semestre1 para mostrar detalles en tu vista o realizar otras acciones
+    $docentes = $curso_semestre1->docentes;
 
-    return view('pages.semestres_cursos.semestre1_cursos.curso-show', ['curso_semestre1' => $curso_semestre1]); // Redirigir a la vista adecuada con el objeto del curso
+    return view('pages.semestres_cursos.semestre1_cursos.curso-show', [
+        'curso_semestre1' => $curso_semestre1,
+        'docentes' => $docentes,
+    ]);
+}
+
+public function getColorClass($curso)
+{
+    // Lógica para determinar el color basado en las propiedades del curso
+    // Puedes ajustar esto según las propiedades específicas de tus cursos
+
+    if ($curso === 'Teorica') {
+        return 'bg-primary'; // Clase para color de fondo azul
+    } else {
+        return 'bg-secondary'; // Clase para otros casos
+    }
+}
+
+public function addDocente(Request $request, $id)
+{
+    // Validar el formulario, si es necesario
+    
+    $request->validate([
+        'seleccionados' => 'required|array',
+        'seleccionados.*' => 'exists:docentes,codigo', // Asegura que todos los seleccionados existan en la tabla docentes
+    ]);
+    dd($request->all());
+    // Obtener los docentes seleccionados por sus códigos
+    $docentesSeleccionados = Docente::whereIn('codigo', $request->input('seleccionados'))->get();
+
+    // Asociar cada docente al curso
+    $curso = Semestre1::find($id);
+    
+    foreach ($docentesSeleccionados as $docente) {
+        $curso->docentes()->attach($docente->id);
+    }
+
+    return redirect()->route('semestres.semestre1.show', $id)
+        ->with('success', '¡Docentes añadidos al curso exitosamente!');
 }
 }

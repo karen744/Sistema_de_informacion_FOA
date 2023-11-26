@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Docente;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -19,4 +20,9 @@ class Semestre1 extends Model
         'modalidad',
         
     ];
+
+    public function docentes()
+    {
+        return $this->belongsToMany(Docente::class, 'semestre1_docentes', 'codigo_curso_semestre1', 'codigo');
+    }
 }

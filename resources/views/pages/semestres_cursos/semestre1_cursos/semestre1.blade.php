@@ -52,7 +52,7 @@
 
         <div class="row" style="margin-left: 500px; margin-top: -400px">
             @forelse ($curso_semestre1 as $curso)
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 ">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $curso->nombre_curso }}</h5>

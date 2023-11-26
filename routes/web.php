@@ -73,6 +73,7 @@ Route::get('/semestres/semestre6', [Semestre6Controller::class, 'index'])->name(
 Route::get('/semestres/semestre1/create', [Semestre1Controller::class, 'create'])->name('semestres.semestre1.create');
 Route::post('/semestres/semestre1/store', [Semestre1Controller::class, 'store'])->name('semestres.semestre1.store');
 Route::get('/semestres/semestre1/{id}', [Semestre1Controller::class, 'show'])->name('semestres.semestre1.show');
+Route::post('/semestres/semestre1/{id}/addDocente', [Semestre1Controller::class, 'addDocente'])->name('semestres.semestre1.addDocente');
 
 #RUTA SEMESTRE2------------------------------------------------------------------------------------
 Route::get('/semestres/semestre2/create', [Semestre2Controller::class, 'create'])->name('semestres.semestre2.create');

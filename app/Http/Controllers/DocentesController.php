@@ -46,7 +46,7 @@ class DocentesController extends Controller
 
     public function show($id)
     {
-        $docente = Docente::find($id); // Obtener el docente por su ID
+        $docentes = Docente::find($id); // Obtener el docente por su ID
 
         return redirect()->route('docentes')->with('success', 'Docente registrado exitosamente.');
     }

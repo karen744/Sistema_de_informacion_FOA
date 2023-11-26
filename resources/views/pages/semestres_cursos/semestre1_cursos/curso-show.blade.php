@@ -42,12 +42,51 @@
 
         <button type="button" class="btn btn-secondary" style="margin-left: 400px; margin-top: -390px">Formulario FOA 13</button>
         </div>
+        <div class="card mb-3">
+          <div class="mt-4">
+              <h5 class="docentestetxt" style="margin-left: 20px">Docentes:</h5>
+              <!-- Botón para abrir el modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-left: 120px; margin-top: -50px; background-color: black">
+                Añadir Docentes
+            </button>
+      
+              <!-- Modal para seleccionar docentes -->
+              <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <form action="{{ route('semestres.semestre1.addDocente', ['id' => $curso_semestre1->codigo_curso_semestre1]) }}" method="POST">
+                              @csrf
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Docentes Disponibles</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                @foreach($docentes as $docente)
+                                <div class="form-check">
+                                    <input type="checkbox" name="seleccionados[]" value="{{ $docente->codigo }}">
+                                    <label class="form-check-label">{{ $docente->nombre }}</label>
+                                </div>
+                            @endforeach
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="submit" class="btn btn-primary">Añadir Docentes</button>
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      </div>
       </div>
       <!--/ Event Details -->
     </div>
         <!-- Resto del contenido de la página -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
     </x-app-layout>
-    <style>
-
-    </style>
-    
+  
