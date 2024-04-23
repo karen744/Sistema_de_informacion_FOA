@@ -16,21 +16,27 @@
 
 
     <x-slot name="header">
+      
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Docentes') }}
         </h2>
     </x-slot>
     <br>
     <div>
-    <a href="{{ route('create.docentes') }}" class="btn btn-primary" style="margin-left: 172px">Registro Docentes</a>
-    </div>
+        <a href="{{ route('create.docentes') }}" class="btn btn-primary"  style="margin-left: 900px; margin-top: 0px">Registro Docentes</a>
+        </div>
     <br>
     <div class="container">
-     
+
+        
         <div class="card">
+            <br>
+           
+                <br>
             <div class="card-header">
 
-                <h5 class="card-title">Listado de Docentes</h5>
+                <h5 class="card-title" style="margin-top: -60px">Listado de Docentes</h5>
+               
             </div>
             <div class="card-body">
                 <div class="table-responsive">
