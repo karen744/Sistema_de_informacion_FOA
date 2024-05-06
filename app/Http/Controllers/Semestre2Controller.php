@@ -30,6 +30,7 @@ class Semestre2Controller extends Controller
             'fecha' => 'required',
             'periodo' => 'required',
             'modalidad' => 'required',
+            'color' => 'required',
         ]);
 
         try {
@@ -41,6 +42,7 @@ class Semestre2Controller extends Controller
                 'fecha' => $request->fecha,
                 'periodo' => $request->periodo,
                 'modalidad' => $request->modalidad,
+                'color' => $request->color,
             ]);
 
             //dd($request->all());

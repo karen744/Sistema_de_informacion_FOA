@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('fecha');
             $table->string('periodo');
             $table->string('modalidad');
+            $table->string('color');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('semestre1s');
+        Schema::dropIfExists('semestre1');
     }
 };

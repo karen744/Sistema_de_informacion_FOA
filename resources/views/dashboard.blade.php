@@ -69,25 +69,34 @@
 
   <div class="card-container">
       <div class="card mb-3">
-          <img src="imagenbie4.jpeg" class="card-img" alt="imagenbie4.png">
+        <a href="{{ route('docentes') }}"></a>
+          <img src="imagenbie4.jpeg" class="card-img" alt="imagenbie4.png" onclick="redirigir('{{ route('docentes') }}')">
           <div class="card-body">
               <h5 class="card-title">Docentes</h5>
               <p class="card-text">Programa de Tecnología en Promoción de la Salud</p>
               <p class="card-text">Si es nuevo en el sistema, por favor registre sus datos</p>
               <p class="card-text"><small class="text-muted">Vincular docentes a cursos</small></p>
-              <a href="{{ route('docentes') }}" class="card-link">Ver Docentes</a>
+              
           </div>
       </div>
 
       <div class="card mb-3">
-          <img src="imagenbie5.jpeg" class="card-img" alt="imagenbie.jpeg">
+          <img src="imagenbie5.jpeg" class="card-img" alt="imagenbie.jpeg" onclick="redirigir1('{{ route('semestres') }}')">
           <div class="card-body">
               <h5 class="card-title">Cursos - Estudiantes</h5>
               <p class="card-text">Programa de Tecnología en Promoción de la Salud</p>
               <p class="card-text"><small class="text-muted">Vincular estudiantes a cursos</small></p>
               <p class="card-text">Subir estudiantes</p>
-              <a href="{{ route('semestres') }}" class="card-link">Semestres-Cursos</a>
+              
           </div>
       </div>
   </div>
 </x-app-layout>
+<script>
+    function redirigir(url) {
+      window.location.href = url;
+    }
+    function redirigir1(url) {
+        window.location.href = url;
+    }
+</script>

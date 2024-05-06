@@ -17,6 +17,6 @@ class Semestre6 extends Model
         'fecha',
         'periodo',
         'modalidad',
-        
+        'color',
     ];
 }

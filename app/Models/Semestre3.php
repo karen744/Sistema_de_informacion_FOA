@@ -17,6 +17,8 @@ class Semestre3 extends Model
         'fecha',
         'periodo',
         'modalidad',
+        'color',
+        
         
     ];
 }

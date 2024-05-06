@@ -83,6 +83,10 @@
                                     <label class="form-label" for="creditos">Creditos</label>
                                     <input type="text" id="creditos" name="creditos" class="form-control">
                                 </div>
+                                <div class="form-group">
+                                    <label for="color">Color de la Tarjeta</label>
+                                    <input type="color" id="color" name="color" class="form-control">
+                            </div>
                         </div>
                     </div>
                                 @if(session('success'))

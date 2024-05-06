@@ -25,7 +25,7 @@
     <div class="col-md-6">
       <!-- Event Details -->
       <div class="card mb-4">
-        <div class="card-body">
+        <div class="card-body" style="border-color: rgb(4, 24, 4); border-width: 2px;">
           
           <small class="text-muted text-uppercase">Informacion Curso</small>
           <ul class="list-unstyled mb-4 mt-3">

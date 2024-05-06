@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('fecha');
             $table->string('periodo');
             $table->string('modalidad');
+            $table->string('color');
             $table->timestamps();
         });
     }

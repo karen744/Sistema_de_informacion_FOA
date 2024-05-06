@@ -30,6 +30,7 @@ class Semestre1Controller extends Controller
         'fecha' => 'required',
         'periodo' => 'required',
         'modalidad' => 'required',
+        'color' => 'required',
     ]);
 
     try {
@@ -41,6 +42,7 @@ class Semestre1Controller extends Controller
             'fecha' => $request->fecha,
             'periodo' => $request->periodo,
             'modalidad' => $request->modalidad,
+            'color' => $request->color,
         ]);
 
         // Después de registrar el curso exitosamente
@@ -51,21 +53,31 @@ class Semestre1Controller extends Controller
     }
 }
 
-    public function show($id)
+ public function show($id)
 {
-    $curso_semestre1 = Semestre1::find($id); // Obtener el curso según el ID proporcionado
+    // Obtener el curso según el ID proporcionado
+    $curso_semestre1 = Semestre1::find($id);
 
+    // Verificar si el curso no existe
     if (!$curso_semestre1) {
-        return redirect()->route('ruta.de.error')->with('error', 'El curso no existe'); // Redirigir si el curso no se encuentra
+        // Redirigir si el curso no se encuentra
+        return redirect()->route('ruta.de.error')->with('error', 'El curso no existe');
     }
-
+    
+    $color = $curso_semestre1->color;
+    // Obtener los docentes asociados al curso
     $docentes = $curso_semestre1->docentes;
 
+
+
+    // Devolver la vista con los datos necesarios
     return view('pages.semestres_cursos.semestre1_cursos.curso-show', [
         'curso_semestre1' => $curso_semestre1,
         'docentes' => $docentes,
+        'color' => $color, 
     ]);
 }
+
 
 public function getColorClass($curso)
 {
