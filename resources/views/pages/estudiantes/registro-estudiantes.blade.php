@@ -44,11 +44,11 @@
 <body>
     <div class="container">
        
-        <div class="card">
+        <div class="card" style="border-width: 2px; border-color: black">
             <div class="card-header">
                 <h5 class="card-title">Registro Estudiantes</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body" >
                 @if (isset($errors) && $errors->any())
                     <div class="alert alert-danger" role="alert">
                         @foreach ($errors->all() as $error)
@@ -58,8 +58,13 @@
                     @endif
                 <form action="{{ route('estudiantes.importar') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="archivo_excel">
-                    <button class="btn btn-primary" type="submit">Importar Estudiantes</button>
+                    <label for="archivo_excel">Documento Excel</label>
+                    <br>
+                    <br>
+                    <input  type="file" name="archivo_excel" >
+                    <br>
+                    <br>
+                    <button class="btn btn-primary " type="submit">Importar Estudiantes</button>
                 </form>             
             </div>
         </div>
@@ -71,8 +76,9 @@
 </x-app-layout>
 <style>
     .btn{
-        background: #3123ae;
+        background: #4dae44;
 
     }
+    
 
 </style>

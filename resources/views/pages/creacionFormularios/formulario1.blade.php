@@ -1,3 +1,9 @@
+<x-app-layout>
+  <x-slot name="header">
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+          {{ __('FORMULARIO #1 - SEGUIMIENTO AL CONTENIDO POR ASIGNATURA') }}
+      </h2>
+  </x-slot>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,101 +16,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <title>FOA 15</title>
-    <style>
-        .boton-formulario {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .boton-profesional:hover {
-            background-color: #0056b3;
-        }
-
-        .card {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .input-select{
-          width: 250px;
-
-        }
-
-        .select2 {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .textarea-control {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            resize: vertical;
-        }
-
-        .file-control {
-            margin-top: 10px;
-        }
-        .input {
-      width: 250px; /* Ajusta el valor según tus necesidades */
-        }
-
-        .card-title {
-            margin-bottom: 0;
-        }
-
-        .action-btns {
-            margin-top: 10px;
-        }
-
-        .action-btns .btn {
-            margin-left: 10px;
-        }
-        .btn
-        {
-            border: #0056b3
-        }
-        
-    </style>
+  
 </head>
 <body>
-    <x-app-layout>
-        <x-slot name="header">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('FORMULARIO #1 - SEGUIMIENTO AL CONTENIDO POR ASIGNATURA') }}
-            </h2>
-        </x-slot>
+    
         <!--<form action="{{ route('formulario1.store') }}" method="POST" enctype="multipart/form-data">-->
         <div class="card">
             <div class="card-header sticky-element bg-label-secondary d-flex justify-content-sm-between align-items-sm-center flex-column flex-sm-row">
@@ -624,4 +539,90 @@
     border-radius: 5px; /* Esquinas redondeadas */
     cursor: pointer;
   }
+
+  .boton-formulario {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+  
+  .boton-profesional:hover {
+      background-color: #0056b3;
+  }
+
+  .card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+  }
+
+  .form-group {
+      margin-bottom: 20px;
+  }
+
+  .form-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
+
+  .form-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+  .input-select{
+    width: 250px;
+
+  }
+
+  .select2 {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+
+  .textarea-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+  }
+
+  .file-control {
+      margin-top: 10px;
+  }
+  .input {
+width: 250px; /* Ajusta el valor según tus necesidades */
+  }
+
+  .card-title {
+      margin-bottom: 0;
+  }
+
+  .action-btns {
+      margin-top: 10px;
+  }
+
+  .action-btns .btn {
+      margin-left: 10px;
+  }
+  .btn
+  {
+      border: #0056b3
+  }
+  
 </style>
