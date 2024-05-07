@@ -118,8 +118,12 @@ Route::post('/estudiantes/store', [EstudiantesController::class, 'store'])->name
 #EXCEL PRUEBA------------------------------------------------------------------------------------------
 #Route::post('/subir-excel', [ExcelController::class, 'subirExcel'])->name('subir.excel');
 Route::get('/upload', [ExcelController::class, 'showForm'])->name('upload.form');
-Route::post('/import', [ExcelController::class, 'import'])->name('upload.import');
+Route::post('/import', [ExcelController::class, 'import'])->name('import.excels');
 Route::get('/show-data', [ExcelController::class, 'showData'])->name('data.show');
+
+Route::post('/importar-estudiantes', [EstudiantesController::class, 'import'])->name('estudiantes.importar');
+
+
 
 
 

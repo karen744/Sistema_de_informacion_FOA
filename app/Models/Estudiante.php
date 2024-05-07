@@ -12,8 +12,8 @@ class Estudiante extends Model
     protected $primaryKey = 'codigo_estudiante';
 
     protected $fillable = [
-        'codigo_estudiante',
-        'nombre_estudiante',
+        'codigo',
+        'nombres',
         'contacto'
         
     ];

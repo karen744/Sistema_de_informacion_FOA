@@ -5,32 +5,57 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel; 
 use App\Models\Estudiante;
+use App\Imports\EstudiantesImport;
 use Illuminate\Support\Facades\Log;
 
 class EstudiantesController extends Controller
 {
     public function index()
     {
-        $estudiantes = Estudiante::get();
+       // $estudiantes = Estudiante::get();
+        $estudiantes = Estudiante::all();
         return view('pages.estudiantes.estudiantes', compact('estudiantes'));
     }
+
+
+    //pruebaExcel________________________________________________________________________
+    public function import(Request $request)
+    {
+        $request->validate([
+            'archivo_excel' => 'required|mimes:xlsx,xls'
+        ]);
+
+        $archivo = $request->file('archivo_excel');
+
+        Excel::import(new EstudiantesImport, $archivo);
+        // Validar los datos del formulario
+  
+        return redirect()->route('estudiantes')->with('success', 'Estudiantes importados exitosamente');
+    }
+//
+
+
+
+
+
     public function create()
     {
         return view('pages.estudiantes.registro-estudiantes');
     }
-    public function store(Request $request)
+
+   /* public function store(Request $request)
 {
     // Validar los datos del formulario
     $validatedData = $request->validate([
-        'codigo_estudiante' => 'sometimes|string',
-        'nombre_estudiante' => 'required|string', // Cambiado a required
+        'codigo' => 'sometimes|string',
+        'nombres' => 'required|string', // Cambiado a required
         'contacto' => 'sometimes|string',
         // ... (otros campos validados)
     ]);
 
     // Verificar si se proporcionaron datos pegados para códigos de estudiantes
-    if ($request->has('codigo_estudiante')) {
-        $codigoEstudiantes = explode("\n", $request->input('codigo_estudiante'));
+    if ($request->has('codigo')) {
+        $codigoEstudiantes = explode("\n", $request->input('codigo'));
 
         // Iterar sobre los códigos de estudiantes y guardar en la base de datos
         foreach ($codigoEstudiantes as $codigo) {
@@ -38,15 +63,15 @@ class EstudiantesController extends Controller
             $codigo = trim($codigo);
             if (!empty($codigo)) {
                 Estudiante::create([
-                    'codigo_estudiante' => $codigo,
+                    'codigo' => $codigo,
                 ]);
             }
         }
     }
 
     // Verificar si se proporcionaron datos pegados para nombres y contactos de estudiantes
-    if ($request->has('nombre_estudiante') && $request->has('contacto')) {
-        $nombresEstudiantes = explode("\n", $request->input('nombre_estudiante'));
+    if ($request->has('nombres') && $request->has('contacto')) {
+        $nombresEstudiantes = explode("\n", $request->input('nombres'));
         $contactosEstudiantes = explode("\n", $request->input('contacto'));
 
         // Verificar si la cantidad de nombres y contactos es la misma
@@ -59,8 +84,8 @@ class EstudiantesController extends Controller
                 // Validar que el nombre no esté vacío antes de crear un nuevo estudiante
                 if (!empty($nombre)) {
                     Estudiante::create([
-                        'codigo_estudiante' => $codigoEstudiantes[$i] ?? null,
-                        'nombre_estudiante' => $nombre,
+                        'codigo' => $codigoEstudiantes[$i] ?? null,
+                        'nombres' => $nombre,
                         'contacto' => $contacto,
                     ]);
                 }
@@ -73,7 +98,7 @@ class EstudiantesController extends Controller
 
     // Después de registrar los estudiantes exitosamente
     return redirect()->route('estudiantes')->with('success', '¡Estudiantes registrados exitosamente!');
-}
+} */
 
 
 public function listarEstudiantes()
@@ -83,7 +108,7 @@ public function listarEstudiantes()
     return view('pages.estudiantes.estudiantes', compact('estudiantes'));
 }
 
-public function subirExcel(Request $request)
+/*public function subirExcel(Request $request)
     {
         // Validar que se haya enviado un archivo y sea de tipo Excel
         Log::info('Iniciando el proceso de subirExcel');
@@ -129,9 +154,8 @@ public function subirExcel(Request $request)
 
         // Redireccionar o devolver una respuesta
         return redirect()->route('estudiantes')->with('success', 'Datos de Excel subidos y guardados exitosamente.');
-    }
-    
+    }*/
 
 
-
+   
 }

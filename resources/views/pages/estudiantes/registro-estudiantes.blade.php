@@ -49,11 +49,18 @@
                 <h5 class="card-title">Registro Estudiantes</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('upload.import') }}" method="POST" enctype="multipart/form-data">
+                @if (isset($errors) && $errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        @foreach ($errors->all() as $error)
+                        {{$error}}
+                        @endforeach
+                    </div>
+                    @endif
+                <form action="{{ route('estudiantes.importar') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="excel_file">
-                    <button class="btn btn-primary" type="submit">Cargar archivo</button>
-                </form>
+                    <input type="file" name="archivo_excel">
+                    <button class="btn btn-primary" type="submit">Importar Estudiantes</button>
+                </form>             
             </div>
         </div>
     </div>

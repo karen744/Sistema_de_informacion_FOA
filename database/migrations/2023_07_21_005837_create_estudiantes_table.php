@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('estudiantes', function (Blueprint $table) {
-            $table->string('codigo_estudiante')->primary(); // Utilizar 'codigo_estudiante' como clave primaria
-            $table->string('nombre_estudiante');
-            $table->string('contacto');
+            $table->id('codigo');
+            $table->string('nombres')->nullable();
+            $table->string('contacto')->nullable();
             $table->timestamps();
         });
     }

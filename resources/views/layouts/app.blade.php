@@ -35,7 +35,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="font-sans antialiased" style="border-color: rgb(4, 24, 4); border-width: 2px;">
+<body class="font-sans antialiased" >
     <x-banner />
     <div class="container">
         @livewire('navigation-menu')

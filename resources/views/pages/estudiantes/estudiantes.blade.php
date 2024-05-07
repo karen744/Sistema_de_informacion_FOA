@@ -28,8 +28,8 @@
             </tr>
             @foreach ($estudiantes as $estudiante)
     <tr>
-        <td>{{ $estudiante->codigo_estudiante }}</td>
-        <td>{{ $estudiante->nombre_estudiante }}</td>
+        <td>{{ $estudiante->codigo }}</td>
+        <td>{{ $estudiante->nombres }}</td>
         <td>{{ $estudiante->contacto }}</td>
     </tr>
 @endforeach
