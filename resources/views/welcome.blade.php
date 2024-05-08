@@ -8,75 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Estilos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Estilos CSS */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('{{ asset('345.png') }}') no-repeat center center fixed;
-            background-size: cover;
-            position: relative;
-            overflow: hidden;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Color de superposición */
-        }
-        .container {
-            position: relative;
-            z-index: 1; /* Para asegurarse de que el contenido esté por encima de la superposición */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-            color: #FFF; /* Color de texto */
-        }
-        .logo {
-            margin-bottom: 20px;
-            width: 150px;
-        }
-        .title {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .btn {
-            padding: 12px 24px;
-            background-color: #04070b;
-            color: #FFF;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            margin-right: 10px;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #2c455e;
-        }
-        .social-icons {
-            margin-top: 20px;
-        }
-        .social-icons a {
-            margin-right: 10px;
-            font-size: 24px;
-            color: #FFF;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .social-icons a:hover {
-            color: #2c455e;
-        }
-    </style>
+   
 </head>
 <body>
     <div class="overlay"></div> <!-- Superposición de color -->
@@ -109,3 +41,72 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
+<style>
+    /* Estilos CSS */
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('{{ asset('345.png') }}') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Color de superposición */
+    }
+    .container {
+        position: relative;
+        z-index: 1; /* Para asegurarse de que el contenido esté por encima de la superposición */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        color: #FFF; /* Color de texto */
+    }
+    .logo {
+        margin-bottom: 20px;
+        width: 150px;
+    }
+    .title {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    .subtitle {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .btn {
+        padding: 12px 24px;
+        background-color: #04070b;
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        margin-right: 10px;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #2c455e;
+    }
+    .social-icons {
+        margin-top: 20px;
+    }
+    .social-icons a {
+        margin-right: 10px;
+        font-size: 24px;
+        color: #FFF;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .social-icons a:hover {
+        color: #2c455e;
+    }
+</style>

@@ -18,7 +18,7 @@
             {{-- <!--<form action="{{ route('formulario1.store') }}" method="POST" enctype="multipart/form-data">--> --}}
             <div class="card">
                 <div class="card-header sticky-element bg-label-secondary d-flex justify-content-sm-between align-items-sm-center flex-column flex-sm-row">
-                    <h5 class="card-title mb-sm-0 me-2">FORMULARIO FOA 15</h5>
+                    <h5 class="card-title mb-sm-0 me-2">FORMULARIO FOA 07</h5>
                     <div class="action-btns" style="text-align: right">
                         <a href="{{ route('cursos')}}" class="btn btn-danger">
                             <span class="align-middle" type="submit" style="background-color: #d52d32; color: #ffffff; border: none; border-radius: 4px; padding: 4px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">Cancelar</span>
@@ -44,17 +44,7 @@
                           <br>
                           <br>
                          <p>
-                            INGRESAR: <br>
-                                    NOMBRE  DEL CURSO<br>
-                                    CÓDIGO DEL CURSO <br>
-                                    SEMESTRE AL CUAL SE OFRECE<br>
-                                    INTENSIDAD HORARIA SEMANAL:<br>
-                                    NÚMERO DE CRÉDITOS: <br>
-                                    TEÓRICA: <br>
-                                    PRÁCTICA:  <br>
-                                    ADICIONALES: TRABAJO INDEPENDIENTE SEMANA:  <br>
-                                    HORAS TOTALES: <br>
-                                    X16<br>
+                          Seleccion de Curso
                          </p>
                         </div>
                       </div>

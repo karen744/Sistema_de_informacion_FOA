@@ -18,8 +18,8 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link href="{{ route('formulariosfoa') }}" :active="request()->routeIs('formulariosfoa')">
-                            {{ __('Formularios') }}
+                        <x-nav-link href="{{ route('semestres') }}" :active="request()->routeIs('formulariosfoa')">
+                            {{ __('Semestres') }}
                         </x-nav-link>
                         <x-nav-link href="{{ route('informes') }}" :active="request()->routeIs('informes')" style="margin-right: 420px">
                             {{ __('Informes') }}
