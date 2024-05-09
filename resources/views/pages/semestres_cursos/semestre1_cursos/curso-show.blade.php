@@ -25,38 +25,36 @@
 
   <div class="row">
     <div class="col">
-        <div class="card card1">
-            <div class="card-body">
-                <h5 class="card-title">REGISTRO ESTUDIANTES</h5>
+        <div class="card card1" onmouseover="moveCard(this)">
+            <a href="{{ route('estudiantes') }}" ></a>
+             <div class="card-body" onclick="redirigir('{{ route('estudiantes') }}')">
+               <h5 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">REGISTRO ESTUDIANTES</h5>
                 <p class="card-text">Registre mediante un documento Excel.</p>
-                <a href="{{ route('estudiantes') }}" class="btn btn-primary">Estudiantes</a>
             </div>
         </div>
     </div>
     <div class="col">
-        <div class="card card1">
-            <div class="card-body">
-                <h5 class="card-title">Programación Temática</h5>
+        <div class="card card2" onmouseover="moveCard(this)">
+            <div class="card-body" onclick="redirigir('{{ route('formulario1.create') }}')">
+                <h5 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Programación Temática</h5>
                 <p class="card-text">Programación Tematica por cada Asignatura</p>
-                <a href="{{ route('formulario1.create') }}" class="btn btn-secondary">Formulario FOA 15</a>
             </div>
         </div>
     </div>
     <div class="col">
-        <div class="card card1">
-            <div class="card-body">
-                <h5 class="card-title">Seguimiento Temático</h5>
+        <div class="card card3" onmouseover="moveCard(this)">
+            <div class="card-body" onclick="redirigir('{{ route('formulario07.create') }}')">
+                <h5 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Seguimiento Temático</h5>
                 <p class="card-text">Seguimiento al Contenido Temático por asignatura</p>
-                <a href="{{ route('formulario07.create') }}" class="btn btn-secondary">Formulario FOA 07</a>
+                
             </div>
         </div>
     </div>
     <div class="col">
-        <div class="card  card1">
+        <div class="card  card4" onmouseover="moveCard(this)">
             <div class="card-body">
-                <h5 class="card-title">Informe Final</h5>
+                <h5 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Informe Final</h5>
                 <p class="card-text">Informe final de desarrollo de la temática de la asignatura</p>
-                <button type="button" class="btn btn-secondary">Formulario FOA 13</button> 
             </div>
         </div>
     </div>
@@ -91,14 +89,6 @@
 
         <br>
         <br>
-      
-        
-        
-        
-        
-        
-          
-              
       
               <!-- Modal para seleccionar docentes -->
               <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,6 +130,19 @@
         
     </x-app-layout>
 
+
+    <script>
+        function redirigir(url) {
+          window.location.href = url;
+        }
+        function redirigir1(url) {
+            window.location.href = url;
+        }
+        function moveCard(card) {
+            card.style.transform = "translateY(-10px)"; // Cambiamos la propiedad transform para mover la tarjeta
+        }
+    </script>
+
     <style>
         .card {
             padding-top: 5px;
@@ -157,8 +160,38 @@
         .card1 {
             border-width: 2px;
             border-color: black;
+            font-weight: bold;
+            font-size: 20px;
             width: 250px;
+            height: 150px;
+            background-image: url('{{ asset('card1.jpg') }}');
+            transition: transform 0.3s ease; /* Agregamos una transición para suavizar el movimiento */
         }
+        .card2 {
+            border-width: 2px;
+            border-color: black;
+            width: 250px;
+            height: 150px;
+            background-image: url('{{ asset('card2.jpg') }}');
+            transition: transform 0.3s ease; /* Agregamos una transición para suavizar el movimiento */
+        }
+        .card3 {
+            border-width: 2px;
+            border-color: black;
+            width: 250px;
+            height: 150px;
+            background-image: url('{{ asset('card3.jpg') }}');
+            transition: transform 0.3s ease; /* Agregamos una transición para suavizar el movimiento */
+        }
+        .card4 {
+            border-width: 2px;
+            border-color: black;
+            width: 250px;
+            height: 150px;
+            background-image: url('{{ asset('card4.jpg') }}');
+            transition: transform 0.3s ease; /* Agregamos una transición para suavizar el movimiento */
+        }
+        
         .cardcurso {
           
             background-image: url('{{ asset('12.jpg') }}');
