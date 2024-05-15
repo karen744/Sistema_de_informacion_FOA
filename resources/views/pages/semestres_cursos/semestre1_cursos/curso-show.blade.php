@@ -14,7 +14,7 @@
         <title>Cursos</title>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __(' Semestre 1 - Curso') }}
+                {{ __(' Semestre 1 - Curso')}}
             </h2>
         </x-slot>
         <br>
@@ -35,7 +35,7 @@
     </div>
     <div class="col">
         <div class="card card2" onmouseover="moveCard(this)">
-            <div class="card-body" onclick="redirigir('{{ route('formulario1.create') }}')">
+            <div class="card-body" onclick="redirigir('{{ route('semestres.semestre1.formulario07', ['id' => $id]) }}')">
                 <h5 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Programación Temática</h5>
                 <p class="card-text">Programación Tematica por cada Asignatura</p>
             </div>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('periodo');
             $table->string('modalidad');
             $table->string('color');
+            $table->string('formulario_07')->nullable();
             $table->timestamps();
         });
     }

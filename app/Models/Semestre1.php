@@ -19,6 +19,7 @@ class Semestre1 extends Model
         'periodo',
         'modalidad',
         'color',
+        'formulario_07'
         
     ];
 

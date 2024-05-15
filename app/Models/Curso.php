@@ -19,6 +19,7 @@ class Curso extends Model
         'modalidad',
         'grupo'
         
+        
     ];
 
   
