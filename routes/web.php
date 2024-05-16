@@ -74,10 +74,15 @@ Route::get('/semestres/semestre1/create', [Semestre1Controller::class, 'create']
 Route::post('/semestres/semestre1/store', [Semestre1Controller::class, 'store'])->name('semestres.semestre1.store');
 Route::get('/semestres/semestre1/{id}', [Semestre1Controller::class, 'show'])->name('semestres.semestre1.show');
 Route::post('/semestres/semestre1/{id}/addDocente', [Semestre1Controller::class, 'addDocente'])->name('semestres.semestre1.addDocente');
-Route::get('/semestres/semestre1/{id}/formulario07', [Semestre1Controller::class, 'formulario07'])->name('semestres.semestre1.formulario07');
 
+Route::get('/semestres/semestre1/{id}/formulario07', [Semestre1Controller::class, 'formulario07'])->name('semestres.semestre1.formulario07');
 Route::get('/semestres/semestre1/{id}/download', [Semestre1Controller::class, 'downloadForm'])->name('semestres.semestre1.download');
 Route::post('/semestres/semestre1/{id}/upload', [Semestre1Controller::class, 'uploadDocument'])->name('semestres.semestre1.upload');
+
+
+Route::get('/semestres/semestre1/{id}/formulario15', [Semestre1Controller::class, 'formulario15'])->name('semestres.semestre1.formulario15');
+Route::get('/semestres/semestre1/{id}/download15', [Semestre1Controller::class, 'downloadForm15'])->name('semestres.semestre1.download15');
+Route::post('/semestres/semestre1/{id}/upload15', [Semestre1Controller::class, 'uploadDocument15'])->name('semestres.semestre1.upload15');
 
 #RUTA SEMESTRE2------------------------------------------------------------------------------------
 Route::get('/semestres/semestre2/create', [Semestre2Controller::class, 'create'])->name('semestres.semestre2.create');

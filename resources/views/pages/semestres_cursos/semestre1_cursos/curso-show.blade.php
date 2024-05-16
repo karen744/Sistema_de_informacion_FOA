@@ -43,7 +43,7 @@
     </div>
     <div class="col">
         <div class="card card3" onmouseover="moveCard(this)">
-            <div class="card-body" onclick="redirigir('{{ route('formulario07.create') }}')">
+            <div class="card-body" onclick="redirigir('{{ route('semestres.semestre1.formulario15', ['id' => $id]) }}')">
                 <h5 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Seguimiento Temático</h5>
                 <p class="card-text">Seguimiento al Contenido Temático por asignatura</p>
                 
