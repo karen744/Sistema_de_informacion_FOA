@@ -15,23 +15,65 @@
         </x-slot>
 
         <div class="container mt-4">
-            <h1>Formulario 07</h1>
+            <h3>Formulario 07 - Programación Temática</h3>
+            <br>
+            <h6>Por favor descargue el documento </h6>
 
             <!-- Botón para descargar el documento por defecto -->
-            <a href="{{ route('semestres.semestre1.download', $id) }}" class="btn btn-primary">Descargar Documento por Defecto</a>
-
+            <div class="card">
+            <div class="card-body" onclick="redirigir('{{ route('semestres.semestre1.download', $id) }}')">
+                <p class="card-text">Formulario FOA 07.</p>
+            </div>
+            </div>
             <hr>
 
             <!-- Formulario para subir un nuevo documento -->
+            <div class="card1">
             <form action="{{ route('semestres.semestre1.upload', $id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="formulario_07">Subir Documento Nuevo:</label>
+                    <label for="formulario_07">Por favor suba el formulario aqui:</label>
+                    <br>
+                    <br>
                     <input type="file" name="formulario_07" id="formulario_07" class="form-control-file">
+                   
                 </div>
+                <br>
                 <button type="submit" class="btn btn-success">Subir Documento</button>
             </form>
+            </div>
         </div>
     </body>
     </html>
 </x-app-layout>
+<script>
+    function redirigir(url) {
+      window.location.href = url;
+    }
+    </script>
+<style>
+    .card {
+        border-width: 2px;
+            border-color: black;
+            font-weight: bold;
+            font-size: 20px;
+            width: 150px;
+            height: 100px;
+            background-color: rgb(234, 237, 250);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            
+    }
+    .card1 {
+        border-width: 2px;
+        width: 450px;
+        height: 160px;
+        border-color: black;
+        padding: 5px;
+        padding-bottom: 5px;
+    }
+    .card:hover {
+    background-color: #85a7fe; /* Color amarillo claro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+</style>
