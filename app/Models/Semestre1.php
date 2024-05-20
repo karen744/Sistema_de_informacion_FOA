@@ -28,6 +28,6 @@ class Semestre1 extends Model
 
     public function docentes()
     {
-        return $this->belongsToMany(Docente::class, 'semestre1_docentes', 'codigo_curso_semestre1', 'codigo');
+        return $this->belongsToMany(Docente::class, 'curso_docente', 'codigo_curso_semestre1', 'codigo_docente');
     }
 }

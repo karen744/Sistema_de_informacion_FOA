@@ -10,6 +10,7 @@ class Docente extends Model
 {
     use HasFactory;
 
+    protected $table = 'docentes';
     protected $primaryKey = 'codigo';
 
     protected $fillable = [
@@ -20,7 +21,8 @@ class Docente extends Model
         'email'
         
     ];
-    public function semestre1 (){
-        return $this->belongsToMany(Semestre1::class, 'semestre1_docentes', 'codigo', 'codigo_curso_semestre1');
-      }
+    public function cursos()
+    {
+        return $this->belongsToMany(Semestre1::class, 'curso_docente', 'codigo_docente', 'codigo_curso_semestre1');
+    }
 }

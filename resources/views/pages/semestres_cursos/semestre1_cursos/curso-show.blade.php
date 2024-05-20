@@ -94,32 +94,43 @@
               <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                       <div class="modal-content">
-                          <form action="{{ route('semestres.semestre1.addDocente', ['id' => $curso_semestre1->codigo_curso_semestre1]) }}" method="POST">
-                              @csrf
-                              <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Docentes Disponibles</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
+                        <form action="{{ route('semestres.semestre1.addDocente', ['id' => $curso_semestre1->codigo_curso_semestre1]) }}" method="POST">
+                            @csrf
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Docentes Disponibles</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
                                 @foreach($docentes as $docente)
-                                <div class="form-check">
-                                    <input type="checkbox" name="seleccionados[]" value="{{ $docente->codigo }}">
-                                    <label class="form-check-label">{{ $docente->nombre }}</label>
-                                </div>
-                            @endforeach
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="submit" class="btn btn-primary">Añadir Docentes</button>
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-     
-      
-     
+                                    <div class="form-check">
+                                        <input type="checkbox" name="seleccionados[]" value="{{ $docente->codigo }}">
+                                        <label class="form-check-label">{{ $docente->nombre }}</label>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Añadir Docentes</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
+
+                        
+                    </div>
+                </div>
+                
+            </div>
+            @foreach($docentes as $docente)
+            <div class="card mb-3">
+                <div class="card-header">Docente Añadido</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ $docente->nombre }}</h5>
+                    <p class="card-text">Identificación: {{ $docente->identificacion }}</p>
+                    <p class="card-text">Celular: {{ $docente->celular_docente }}</p>
+                    <p class="card-text">Correo electrónico: {{ $docente->email }}</p>
+                </div>
+            </div>
+        @endforeach
+
      
       <!--/ Event Details -->
    

@@ -88,6 +88,8 @@ Route::get('/semestres/semestre1/{id}/formulario13', [Semestre1Controller::class
 Route::get('/semestres/semestre1/{id}/download13', [Semestre1Controller::class, 'downloadForm13'])->name('semestres.semestre1.download13');
 Route::post('/semestres/semestre1/{id}/upload13', [Semestre1Controller::class, 'uploadDocument13'])->name('semestres.semestre1.upload13');
 
+
+
 #RUTA SEMESTRE2------------------------------------------------------------------------------------
 Route::get('/semestres/semestre2/create', [Semestre2Controller::class, 'create'])->name('semestres.semestre2.create');
 Route::post('/semestres/semestre2/store', [Semestre2Controller::class, 'store'])->name('semestres.semestre2.store');
@@ -130,9 +132,6 @@ Route::post('/estudiantes/store', [EstudiantesController::class, 'store'])->name
 
 #EXCEL PRUEBA------------------------------------------------------------------------------------------
 #Route::post('/subir-excel', [ExcelController::class, 'subirExcel'])->name('subir.excel');
-Route::get('/upload', [ExcelController::class, 'showForm'])->name('upload.form');
-Route::post('/import', [ExcelController::class, 'import'])->name('import.excels');
-Route::get('/show-data', [ExcelController::class, 'showData'])->name('data.show');
 
 Route::post('/importar-estudiantes', [EstudiantesController::class, 'import'])->name('estudiantes.importar');
 

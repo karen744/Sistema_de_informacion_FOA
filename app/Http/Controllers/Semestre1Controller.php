@@ -32,8 +32,10 @@ class Semestre1Controller extends Controller
     }
     
     $color = $curso_semestre1->color;
+
     // Obtener los docentes asociados al curso
-    $docentes = $curso_semestre1->docentes;
+    $curso = Semestre1::with('docentes')->findOrFail($id);
+    $docentes = Docente::all();
 
     // Devolver la vista con los datos necesarios
     return view('pages.semestres_cursos.semestre1_cursos.curso-show', [
@@ -330,28 +332,11 @@ public function getColorClass($curso)
 }
 
 public function addDocente(Request $request, $id)
-{
-    // Validar el formulario, si es necesario
-    
-    $request->validate([
-        'seleccionados' => 'required|array',
-        'seleccionados.*' => 'exists:docentes,codigo', // Asegura que todos los seleccionados existan en la tabla docentes
-    ]);
-    dd($request->all());
-    // Obtener los docentes seleccionados por sus códigos
-    $docentesSeleccionados = Docente::whereIn('codigo', $request->input('seleccionados'))->get();
-
-    // Asociar cada docente al curso
-    $curso = Semestre1::find($id);
-    
-    foreach ($docentesSeleccionados as $docente) {
-        $curso->docentes()->attach($docente->id);
+    {
+        $curso = Semestre1::findOrFail($id);
+        $curso->docentes()->sync($request->seleccionados); // Añadir docentes seleccionados
+        return redirect()->route('semestres.semestre1.show', $id)->with('success', 'Docentes añadidos exitosamente.');
     }
-
-    return redirect()->route('semestres.semestre1.show', $id)
-        ->with('success', '¡Docentes añadidos al curso exitosamente!');
-}
-
 }
 
 
