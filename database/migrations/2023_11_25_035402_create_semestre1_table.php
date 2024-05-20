@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('color');
             $table->string('formulario_07')->nullable();
             $table->string('formulario_15')->nullable();
+            $table->string('formulario_13')->nullable();
             $table->timestamps();
         });
     }

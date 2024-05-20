@@ -62,12 +62,17 @@ class Semestre1Controller extends Controller
             // Obtener la ruta del archivo subido
             $formulario_07_path = null;
             $formulario_15_path = null;
+            $formulario_13_path = null;
             if ($request->hasFile('formulario_07')) {
                 $formulario_07_path = $request->file('formulario_07')->store('public/formularios');
             }
             
             if ($request->hasFile('formulario_15')) {
                 $formulario_15_path = $request->file('formulario_15')->store('public/formularios');
+            }
+
+            if ($request->hasFile('formulario_13')) {
+                $formulario_13_path = $request->file('formulario_13')->store('public/formularios');
             }
     
             // Guardar el curso en la base de datos
@@ -81,6 +86,7 @@ class Semestre1Controller extends Controller
             $curso->color = $validatedData['color'];
             $curso->formulario_07 = $formulario_07_path;
             $curso->formulario_15 = $formulario_15_path;
+            $curso->formulario_13 = $formulario_13_path;
             $curso->save();
     
             // Después de registrar el curso exitosamente
@@ -237,6 +243,66 @@ public function downloadForm15($id)
     }
 }
 
+
+public function formulario13($id)
+{
+    // Aquí puedes realizar cualquier lógica adicional si es necesario
+    return view('pages.semestres_cursos.semestre1_cursos.formulario13', compact('id'));
+}
+
+public function downloadForm13($id)
+{
+    $formPath = public_path('formulario13.docx');
+    
+    if (!file_exists($formPath)) {
+        return redirect()->back()->with('error', 'El documento no existe');
+    }
+    
+    return response()->download($formPath);
+}
+
+public function uploadDocument13(Request $request, $id)
+{
+    // Valida la solicitud
+    $request->validate([
+        'formulario_13' => 'required|mimes:doc,docx|max:2048'
+    ]);
+
+    // Verifica que el archivo esté presente en la solicitud
+    if (!$request->hasFile('formulario_13')) {
+        return back()->with('error', 'No se ha subido ningún archivo');
+    }
+
+    // Obtén el archivo
+    $file = $request->file('formulario_13');
+
+    // Verifica si el archivo es válido
+    if (!$file->isValid()) {
+        return back()->with('error', 'El archivo no es válido');
+    }
+
+    // Almacena el archivo y captura la ruta
+    $path = $file->store('documentos', 'public');
+    if (!$path) {
+        return back()->with('error', 'No se pudo almacenar el archivo');
+    }
+
+    // Obtén el curso y verifica su existencia
+    $curso = Semestre1::find($id);
+    if (!$curso) {
+        return back()->with('error', 'Curso no encontrado con el ID: ' . $id);
+    }
+
+    // Actualiza el campo formulario_13
+    $curso->formulario_13 = $path;
+
+    // Guarda el curso y verifica el éxito de la operación
+    if ($curso->save()) {
+        return redirect()->route('semestres.semestre1.show', $id)->with('success', 'Documento subido exitosamente.');
+    } else {
+        return back()->with('error', 'Error al guardar en la base de datos');
+    }
+}
 
 
 

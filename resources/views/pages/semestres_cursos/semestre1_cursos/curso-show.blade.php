@@ -52,7 +52,7 @@
     </div>
     <div class="col">
         <div class="card  card4" onmouseover="moveCard(this)">
-            <div class="card-body">
+            <div class="card-body" onclick="redirigir('{{ route('semestres.semestre1.formulario13', ['id' => $id]) }}')">
                 <h5 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Informe Final</h5>
                 <p class="card-text">Informe final de desarrollo de la temática de la asignatura</p>
             </div>
